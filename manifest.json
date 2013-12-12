@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "OpenIn",
-  "description": "This extension demonstrates a browser action with kittens.",
+  "name": "OpenAt",
+  "description": "This extension helps you open urls in different domains",
   "version": "1.0",
 
   "permissions": [
