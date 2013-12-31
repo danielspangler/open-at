@@ -1,13 +1,17 @@
 {
   "manifest_version": 2,
 
-  "name": "OpenAt",
+  "name": "Open At",
   "description": "This extension helps you open urls in different domains",
   "version": "1.0",
 
   "permissions": [
-   "contextMenus"
+   "contextMenus", "tabs", "http://*/*", "https://*/*"
   ],
+  "browser_action":  {
+	"default_title": "Open at",
+	"default_popup": "popup.html"
+  },
   "background": {
     "scripts": ["goto.js"]
   }
