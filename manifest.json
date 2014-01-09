@@ -9,11 +9,15 @@
    "contextMenus", "tabs", "http://*/*", "https://*/*"
   ],
   "browser_action":  {
-	"default_title": "Open at",
-	"default_popup": "popup.html"
+  	"default_title": "Open At",
+	  "default_popup": "popup.html"
   },
   "background": {
     "scripts": ["goto.js"]
-  }
+  },
+  "icons": {
+    "128": "glyphicons_151_new_window.png"
+  },
+  "options_page": "options.html"
 }
 

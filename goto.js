@@ -1,7 +1,16 @@
 
 
 function openLocal(info, tab) {
-  openIn(info, tab, "http://djspang.homes.com");
+  var subdomain = localStorage["subdomain"];
+  if (subdomain) {
+    openIn(info, tab, "http://" + subdomain + ".homes.com");
+  } else {
+    alert("Set your local subdomain in the extension options.");
+  }
+}
+
+function openDev(info, tab) {
+  openIn(info, tab, "http://dev.homes.com");
 }
 
 function openStaging(info, tab) {
@@ -26,16 +35,16 @@ function openIn(info, tab, prefix) {
   chrome.tabs.create({ index: tab.index+1, url: newURL });  
 }
 
-
 var id = chrome.contextMenus.create({"title": "Local Dev", "contexts":["selection"],
                                      "onclick": openLocal});
 
+var id = chrome.contextMenus.create({"title": "Dev", "contexts":["selection"],
+                                     "onclick": openDev});
 
 var id = chrome.contextMenus.create({"title": "Staging", "contexts":["selection"],
                                      "onclick": openStaging});
 
 var id = chrome.contextMenus.create({"title": "Prod", "contexts":["selection"],
 	                                     "onclick": openProd});
-
 
 

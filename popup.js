@@ -1,6 +1,10 @@
 function click(e) {
   console.log("hello");
-  window.close();
+
+  chrome.tabs.getCurrent(function(tab) {
+    window.close();
+  })
+
 }
   
 document.addEventListener('DOMContentLoaded', function () {
