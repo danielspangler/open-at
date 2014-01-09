@@ -1,5 +1,4 @@
 
-
 function openLocal(info, tab) {
   var subdomain = localStorage["subdomain"];
   if (subdomain) {

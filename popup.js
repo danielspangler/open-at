@@ -1,11 +1,14 @@
 function click(e) {
-  console.log("hello");
 
-  chrome.tabs.getCurrent(function(tab) {
-    window.close();
-  })
+    chrome.tabs.getCurrent(function(tab) {
+		chrome.runtime.sendMessage({"url": tab}, function(response) {
+		  console.log(response.farewell);
+		});
 
-}
+    });
+
+
+};
   
 document.addEventListener('DOMContentLoaded', function () {
   var divs = document.querySelectorAll('div');
