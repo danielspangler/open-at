@@ -20,6 +20,10 @@ function openProd(info, tab) {
 	  openIn(info, tab, "http://www.homes.com");
 }
 
+function openBeta(info, tab) {
+	openIn(info, tab, "http://beta.homes.com");
+}
+
 function openIn(info, tab, prefix) {
   var selection = info.selectionText.trim(); // remove whitespace
   if (selection.indexOf('/')!=0) { // if the selection doesn't have a starting forward slash, make it so
@@ -42,6 +46,9 @@ var id = chrome.contextMenus.create({"title": "Dev", "contexts":["selection"],
 
 var id = chrome.contextMenus.create({"title": "Staging", "contexts":["selection"],
                                      "onclick": openStaging});
+
+var id = chrome.contextMenus.create({"title": "Beta", "contexts":["selection"],
+					"onclick": openBeta});
 
 var id = chrome.contextMenus.create({"title": "Prod", "contexts":["selection"],
 	                                     "onclick": openProd});
